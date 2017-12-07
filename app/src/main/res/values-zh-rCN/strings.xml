@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">实时网速</string>
+
+    <string name="today_name">今日</string>
+
+    <string name="str_mobile">移动数据</string>
+    <string name="str_wifi">无线网络</string>
+    <string name="str_total">总计</string>
+    <string name="about_us_email_title">电子邮箱</string>
+    <string name="about_us_website_title">官方网站</string>
+    <string name="share">分享</string>
+    <string name="share_content">能在通知栏状态栏显示的实时网速</string>
+    <string name="version">版本号</string>
+    <string name="about_us">关于我们</string>
+    <string name="error_starting_activity_unknow">应用程序打开失败</string>
+    <string name="about_email_no_app">获取不到您的邮箱，请检查您的邮箱设置</string>
+    <string name="bit">比特每秒</string>
+    <string name="b">字节每秒</string>
+    <string name="mobile">移动数据:</string>
+    <string name="wifi">无线网络:</string>
+    <string name="settings">设置</string>
+    <string name="enable_notifications">通知栏显示</string>
+    <string name="enable_disable_notifications">是否在通知栏显示</string>
+    <string name="hide_notifications">自动隐藏</string>
+    <string name="only_show_connected">只在联网时显示</string>
+    <string name="update_interval">刷新频率</string>
+    <string name="speed_units">速度单位</string>
+    <string name="feedback">问题反馈</string>
+    <string name="update">上传:</string>
+    <string name="download">下载:</string>
+    <string name="str_session_time">会话时长</string>
+    <string name="str_session_usage">会话流量</string>
+    <string name="str_time">时间(秒)</string>
+    <string name="about_us_email">shereworkshop@gmail.com</string>
+    <string name="about_us_website">easytouch.com</string>
+    <string name="str_about_facebook">Facebook</string>
+    <string name="str_about_twitter">Twitter</string>
+    <string name="str_about_VKontakte">VKontakte</string>
+    <string name="one_sec">1s</string>
+    <string name="one_point_five_sec">1.5s</string>
+    <string name="two_sec">2s</string>
+</resources>

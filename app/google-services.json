@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "314370910609",
+    "project_id": "easynetworkspeed"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:314370910609:android:ed0be07bc8e4502e",
+        "android_client_info": {
+          "package_name": "com.slt.networkspeed"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFefMtvBOeSzsJTk3PIOoUB5AuA6RBPEY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-55900584-15"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

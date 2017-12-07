@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="botom_klpd">32.0dip</dimen>
+    <dimen name="bottom">20.0dip</dimen>
+    <dimen name="bottom1_1_left">1.0dip</dimen>
+    <dimen name="bottom1_1_r">30.0dip</dimen>
+    <dimen name="bottom1_2_left">30.0dip</dimen>
+    <dimen name="bottom1_2_r">1.0dip</dimen>
+    <dimen name="bottom1_d_l">15.0dip</dimen>
+    <dimen name="bottom1_d_r">15.0dip</dimen>
+    <dimen name="bottom1_l">12.0dip</dimen>
+    <dimen name="bottom1_r">18.0dip</dimen>
+    <dimen name="bottom2_1_l">2.0dip</dimen>
+    <dimen name="bottom2_1_r">28.0dip</dimen>
+    <dimen name="bottom2_2_l">18.0dip</dimen>
+    <dimen name="bottom2_2_r">12.0dip</dimen>
+    <dimen name="bottom3_1_l">1.0dip</dimen>
+    <dimen name="bottom3_1_r">30.0dip</dimen>
+    <dimen name="bottom3_2_l">15.0dip</dimen>
+    <dimen name="bottom3_2_r">15.0dip</dimen>
+    <dimen name="bottom3_3_l">30.0dip</dimen>
+    <dimen name="bottom3_3_r">1.0dip</dimen>
+    <dimen name="upper_t">1.0dip</dimen>
+    <dimen name="recycleview_item_spacing1">4dip</dimen>
+    <dimen name="recycleview_item_spacing2">0.5dip</dimen>
+</resources>

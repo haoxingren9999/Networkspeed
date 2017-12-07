@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+>
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/title_background"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="@string/settings" />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/abl">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <com.slt.networkspeed.ui.ClientSettingItemView
+                android:layout_marginTop="8dp"
+                android:id="@+id/tv_notification"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="@drawable/ripple_colorbg_rectangle"
+                android:clickable="true"
+                app:settingDes="@string/enable_disable_notifications"
+                app:settingTitle="@string/enable_notifications"
+                app:show_check="true"
+                app:show_view="true"
+
+                app:switch_Checked="true" />
+
+            <com.slt.networkspeed.ui.ClientSettingItemView
+                android:id="@+id/tv_auto_show_hide"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="@drawable/ripple_colorbg_rectangle"
+                android:clickable="false"
+                app:settingDes="@string/only_show_connected"
+                app:settingTitle="@string/hide_notifications"
+                app:show_check="true"
+                app:show_view="true"
+                app:switch_Checked="true" />
+
+            <include
+
+                layout="@layout/fresh_rate"
+                android:layout_width="match_parent"
+                android:layout_height="72dp" />
+
+            <include
+
+                layout="@layout/speed_unit"
+                android:layout_width="match_parent"
+                android:layout_height="72dp" />
+
+            <com.slt.networkspeed.ui.ClientSettingItemView
+                android:id="@+id/tv_tv_share"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/ripple_colorbg_rectangle"
+                android:clickable="true"
+                app:settingDes=""
+                app:settingTitle="@string/share"
+                app:show_check="false"
+                app:show_view="true"
+                app:switch_Checked="true" />
+
+            <com.slt.networkspeed.ui.ClientSettingItemView
+                android:id="@+id/tv_about_us"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/ripple_colorbg_rectangle"
+                android:clickable="true"
+                app:settingDes=""
+                app:settingTitle="@string/about_us"
+                app:show_check="false"
+                app:show_view="true"
+                app:switch_Checked="true" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

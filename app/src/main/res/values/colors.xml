@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#222222</color>
+    <color name="colorPrimaryDark">#292929</color>
+    <color name="colorAccent">#fdd835</color>
+    <color name="colorAccent90">#99fdd835</color>
+    <color name="colorSwitchThumbNormal">#fff1f1f1</color>
+    <color name="colorThumbColorDisable">#ffBDBDBD</color>
+    <color name="colorControlNormalHalf">#ffb9b8b8</color>
+    <color name="colorTrackColorDisable">#1f000000</color>
+    <color name="colorControlActivatedHalf">#ffc72065</color>
+    <color name="colorAccentHalf">#9000E5FF</color>
+    <color name="client_divider_color">#DCDCDC</color>
+    <color name="color_destription">#9a9a9a</color>
+    <color name="title_background">#333333</color>
+    <color name="background">#eeeeee</color>
+    <color name="list_background">#fafafa</color>
+
+    <color name="client_colorPrimary">#0288d1</color>
+    <color name="client_colorPrimaryDark">#026da7</color>
+    <color name="client_colorAccent">#0288d1</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="activity_background">#ffffff</color>
+    <color name="ripple_material_light_pressed">#cfcfcf</color>
+    <color name="total_title_text_color">#e4000000</color>
+</resources>

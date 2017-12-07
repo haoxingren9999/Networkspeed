@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="switches">
+        <item>@style/LightSwitch</item>
+    </array>
+
+    
+   <!--  <array name="button_flat">
+        <item>@style/LightFlatButtonRippleStyle</item>
+        <item>@style/DarkFlatButtonRippleStyle</item>
+    </array>
+    <array name="button_flat_cancel">
+        <item>@style/LightFlatButtonRippleStyleCancel</item>
+        <item>@style/DarkFlatButtonRippleStyle</item>
+    </array> -->
+    
+</resources>

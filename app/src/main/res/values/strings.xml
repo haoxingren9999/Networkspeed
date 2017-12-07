@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">NetworkSpeed</string>
+
+    <string name="today_name">Today</string>
+
+    <string name="str_mobile">Mobile</string>
+    <string name="str_wifi">WIFI</string>
+    <string name="str_total">Total</string>
+    <string name="about_us_email_title">E-mail</string>
+    <string name="about_us_website_title">Website</string>
+    <string name="about_us_email">shereworkshop@gmail.com</string>
+    <string name="about_us_website">easytouch.com</string>
+    <string name="share">Share</string>
+    <string name="share_content">能在通知栏状态栏显示的实时网速</string>
+    <string name="version">version</string>
+    <string name="str_about_facebook">Facebook</string>
+    <string name="str_about_twitter">Twitter</string>
+    <string name="str_about_VKontakte">VKontakte</string>
+    <string name="about_us">About us</string>
+    <string name="error_starting_activity_unknow">App starting failed</string>
+    <string name="about_email_no_app">Cannot get your mailbox, please check your mailbox setting</string>
+    <string name="one_sec">1s</string>
+    <string name="one_point_five_sec">1.5s</string>
+    <string name="two_sec">2s</string>
+    <string name="bit">Bits per second</string>
+    <string name="b">Bytes per second</string>
+    <string name="mobile">Mobile:</string>
+    <string name="wifi">WiFi:</string>
+    <string name="settings">Settings</string>
+    <string name="enable_notifications">Enable notifications</string>
+    <string name="enable_disable_notifications">Enable/Disable notifications monitor</string>
+    <string name="hide_notifications">Hide notifications when idle</string>
+    <string name="only_show_connected">Only show notifications when connected to Internet</string>
+    <string name="update_interval">Update interval</string>
+    <string name="speed_units">Speed units</string>
+    <string name="feedback">Feedback</string>
+    <string name="update">up:</string>
+    <string name="download">down:</string>
+    <string name="str_session_time">Session time</string>
+    <string name="str_session_usage">Session usage</string>
+    <string name="str_time">Time(s)</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="speed_unit">
+        <item>@string/b</item>
+        <item>@string/bit</item>
+    </string-array>
+    <string-array name="fresh_rate">
+        <item>@string/one_sec</item>
+        <item>@string/one_point_five_sec</item>
+        <item>@string/two_sec</item>
+    </string-array>
+
+
+</resources>

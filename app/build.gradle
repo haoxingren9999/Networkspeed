@@ -1,0 +1,197 @@
+apply plugin: 'com.android.application'
+
+    // 默认版本号
+    ext.appVersionCode = 0000100
+    // 默认版本名
+    ext.appVersionName = "0.0.1"
+    // 默认apk输出路径
+    ext.appReleaseDir = "D:\\NetworkSpeed\\"
+    //项目名称
+    ext.appProjectName = "NetworkSpeed"
+    //是否收费区分标志
+    ext.appCharge = "09"
+//    //代码对应的svn值
+    ext.appCodeValue="9268"
+    //编译测试版本，还是正式版本，0为测试版本，1为正式版本
+    ext.appVersionType = 0
+//    //为生成包名时使用
+    ext.appNVersion = 000001
+
+    // 加载版本信息配置文件方法
+    def loadProperties() {
+        def proFile = file("../local.properties")
+        Properties pro = new Properties()
+        proFile.withInputStream { stream->
+            pro.load(stream)
+        }
+        appReleaseDir = pro.appReleaseDir
+        appVersionCode = Integer.valueOf(pro.appVersionCode)
+        appVersionName = pro.appVersionName
+        appProjectName = pro.appProjectName
+
+        appCharge = pro.appCharge
+        appCodeValue  = pro.appCodeValue
+        appVersionType = Integer.valueOf(pro.appVersionType)
+        appNVersion = pro.appNVersion
+    }
+
+android {
+    //加载版本信息
+    loadProperties()
+
+    //解决程序包org.apache.http不存在的问题
+    signingConfigs {
+        debug {
+        }
+
+        release {
+            storeFile
+            storePassword
+            keyAlias
+            keyPassword
+        }
+    }
+
+    useLibrary 'org.apache.http.legacy'
+
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.slt.networkspeed"
+        minSdkVersion 9
+        targetSdkVersion 21
+        versionCode appVersionCode
+        versionName appVersionName
+        //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    // 打包排除以下文件，屏蔽因as自身bug，在没有重复引用jar时，提示jar重复引用的问题
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+    }
+
+    buildTypes {
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            //压缩对齐生成的apk包
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+
+            //正式包:
+            //测试包:
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('release.apk')) {
+                        String name = variant.productFlavors[0].name;
+                        if(appVersionType == 0){//测试包
+                            String pathName = "ID_0000_test";
+                            def fileName = "${appProjectName}_${appNVersion}_${appCharge}_test_${appCodeValue}.apk"
+                            output.outputFile = new File(appReleaseDir+pathName, fileName)//outputFile.parent
+                        }else{//正式包
+                            //String pathName = name.substring(5);
+                            String pathName = "ID_0001_gm";
+                            if(variant.productFlavors[0] != null) {
+                                def fileName = "${appProjectName}_${appNVersion}_${appCharge}.apk"
+                                output.outputFile = new File(appReleaseDir+pathName, fileName)//outputFile.parent
+                            }
+                        }
+                    }
+
+                    if (variant.getBuildType().isMinifyEnabled()) {
+                        variant.assemble.doLast {
+                            copy {
+                                def filePath = "${projectDir.parent}" +"/mappings"
+                                //println filePath
+                                from variant.mappingFile
+                                into filePath
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+
+            minifyEnabled false
+            zipAlignEnabled false
+
+
+        }
+    }
+
+    productFlavors {
+        GooglePlay {
+        }
+
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+
+    allprojects {
+        gradle.projectsEvaluated {
+            tasks.withType(JavaCompile) {
+                options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+            }
+        }
+    }
+
+    File propFile = file('../signing.properties');
+    if (propFile.exists()) {
+        def Properties props = new Properties()
+        props.load(new FileInputStream(propFile))
+        if (props.containsKey('STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+                props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
+            android.signingConfigs.release.storeFile = file(props['STORE_FILE'])
+            android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+            android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+            android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+        } else {
+            android.buildTypes.release.signingConfig = null
+        }
+    } else {
+        android.buildTypes.release.signingConfig = null
+    }
+}
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+//    compile 'com.github.rey5137:material:1.2.4'
+    compile 'com.google.android.gms:play-services-analytics:9.0.0'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.android.support:support-v4:23.2.0'
+    compile 'com.android.support:design:23.2.0'
+    compile 'com.android.support:cardview-v7:23.2.0'
+    compile 'com.android.support:recyclerview-v7:23.2.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    testCompile 'junit:junit:4.12'
+    compile project(':materialmaster_lib-release')
+}
+apply plugin: 'com.google.gms.google-services'
